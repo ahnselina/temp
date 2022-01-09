@@ -32,7 +32,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Printf("%s entering root handler\n", ip)
 	w.Header().Set("VERSION", os.Getenv("VERSION"))
-	w.WriteHeader(500)
+	w.WriteHeader(200)
 	user := r.URL.Query().Get("user")
 	if user != "" {
 		io.WriteString(w, fmt.Sprintf("hello [%s]\n", user))
